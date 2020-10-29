@@ -8,5 +8,38 @@ $query = $pdo -> query ('SELECT * FROM client');
 
 $data = $query->fetchALL(PDO::FETCH_ASSOC);
 
-var_dump ($data);
 ?>
+
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID<th>
+                <th>nom<th>
+                <th>email<th>
+                <th>numero<th>
+                <th>prenom<th>
+            </tr>
+        </thead>
+        <tBody>
+        <?php foreach($data as $data): ?>
+        <td>#<?=$data['id'] ?></td>
+        <td><?= $data['nom'] ?></td>
+        <td><?= $data['email'] ?></td>
+        <td><?= $data['numero'] ?></td>
+        <td><?= $data['prenom'] ?></td>
+    </tr>
+<?php endforeach ?>
+</TBody>
+    </table>
+</body>
+</html>
+
+     
